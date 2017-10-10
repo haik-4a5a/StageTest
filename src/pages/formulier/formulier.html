@@ -1,0 +1,83 @@
+<!--
+  Generated template for the FormulierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Beoordelings Formulier</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="SaveData()">
+        <ion-item>
+          <ion-label>Todo</ion-label>
+          <ion-input type="text" [(ngModel)]="data.title" name="title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description</ion-label>
+          <ion-textarea [(ngModel)]="data.description" name="description"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+  <ion-label>Een punt die beoordeeld moet worden</ion-label>
+  <ion-select multiple=false [(ngModel)]="data.vraag1" name="vraag1">
+    <ion-option value="o">Onvoldoende</ion-option>
+    <ion-option value="m">Matig</ion-option>
+    <ion-option value="v">Voldoende</ion-option>
+    <ion-option value="g">Goed</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Een punt die beoordeeld moet worden</ion-label>
+<ion-select multiple="false" [(ngModel)]="data.vraag2" name="vraag2">
+<ion-option value="o">Onvoldoende</ion-option>
+<ion-option value="m">Matig</ion-option>
+<ion-option value="v">Voldoende</ion-option>
+<ion-option value="g">Goed</ion-option>
+</ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Een punt die beoordeeld moet worden</ion-label>
+<ion-select multiple="false" [(ngModel)]="data.vraag3" name="vraag3">
+<ion-option value="o">Onvoldoende</ion-option>
+<ion-option value="m">Matig</ion-option>
+<ion-option value="v">Voldoende</ion-option>
+<ion-option value="g">Goed</ion-option>
+</ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Een punt die beoordeeld moet worden</ion-label>
+<ion-select multiple="false" [(ngModel)]="data.vraag4" name="vraag4">
+<ion-option value="o">Onvoldoende</ion-option>
+<ion-option value="m">Matig</ion-option>
+<ion-option value="v">Voldoende</ion-option>
+<ion-option value="g">Goed</ion-option>
+</ion-select>
+</ion-item>
+
+        <button ion-button type="submit" (click)= "presentToast()" block>voeg toe</button>
+
+
+      </form>
+
+      <ion-list>
+          <ion-item *ngFor="let form of invoer | async">
+              {{form.title}}
+              {{form.vraag4}}
+          </ion-item>
+      </ion-list>
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Stage Tool
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="contact()">
+      <ion-icon name= "add"></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Welkom bij de stage tool.
+  <p>
+
+    Druk op de plus knop in de rechter hoek.
+  </p>
+
+  <ion-list>
+      <ion-item *ngFor="let form of form | async">
+          {{form.title}}
+      </ion-item>
+  </ion-list>
+
+
+</ion-content>
